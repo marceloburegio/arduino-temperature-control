@@ -1,0 +1,19 @@
+author: Miles Burton <miles@mnetcs.com>, Tim Newsome <nuisance@casualhacker.net>, Guil Barros <gfbarros@bappos.com>, Rob Tillaart <rob.tillaart@gmail.com>
+description: Arduino Library for Dallas Temperature ICs (version 3.9.1)
+type: lib
+version: 1.0
+
+sources:
+  - src
+includes:
+  - include
+libs:
+  - origin: https://github.com/mongoose-os-libs/arduino-compat
+  - origin: https://github.com/mongoose-os-libs/arduino-onewire
+tags:
+  - arduino
+  - c
+  - hw
+  - docs:drivers:DallasTemperature
+
+manifest_version: 2017-09-29
