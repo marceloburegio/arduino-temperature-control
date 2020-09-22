@@ -25,6 +25,8 @@
 #include <OneWire.h>
 #endif
 
+#include "mgos.h"
+
 // Model IDs
 #define DS18S20MODEL 0x10  // also DS1820
 #define DS18B20MODEL 0x28  // also MAX31820

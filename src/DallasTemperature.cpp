@@ -443,7 +443,7 @@ void DallasTemperature::blockTillConversionComplete(uint8_t bitResolution) {
   if (checkForConversion && !parasite) {
     unsigned long start = millis();
     while (!isConversionComplete() && (millis() - start < MAX_CONVERSION_TIMEOUT ))
-      yield();
+      mgos_usleep(1); //yield();
   } else {
     unsigned long delms = millisToWaitForConversion(bitResolution);
     activateExternalPullup();
@@ -540,7 +540,7 @@ bool DallasTemperature::recallScratchPad(const uint8_t* deviceAddress) {
   while (_wire->read_bit() == 0) {
     // Datasheet doesn't specify typical/max duration, testing reveals typically within 1ms
     if (millis() - start > 20) return false;
-    yield();
+    mgos_usleep(1); //yield();
   }
   
   return _wire->reset() == 1;
